@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>GS Dalgalı Yazı</title>
+<style>
+    body {
+        margin: 0;
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .container {
+        position: relative;
+        animation: moveSide 6s linear infinite;
+    }
+
+    .wave span {
+        display: inline-block;
+        font-size: 90px; /* 🔼 biraz büyütüldü */
+        font-weight: 700;
+        font-family: Arial, Helvetica, sans-serif;
+        animation: wave 1.6s ease-in-out infinite,
+                   colorShift 2.5s linear infinite;
+    }
+
+    .wave span:nth-child(n) {
+        animation-delay: calc(0.08s * var(--i));
+    }
+
+    @keyframes wave {
+        0%   { transform: translateY(0); }
+        50%  { transform: translateY(-12px); } /* 🔼 dalga biraz daha belirgin */
+        100% { transform: translateY(0); }
+    }
+
+    @keyframes colorShift {
+        0%   { color: #a50018; }
+        50%  { color: #fdb913; }
+        100% { color: #a50018; }
+    }
+
+    @keyframes moveSide {
+        0%   { transform: translateX(-140px); }
+        50%  { transform: translateX(140px); }
+        100% { transform: translateX(-140px); }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="wave">
+        <span style="--i:1">M</span>
+        <span style="--i:2">e</span>
+        <span style="--i:3">h</span>
+        <span style="--i:4">m</span>
+        <span style="--i:5">e</span>
+        <span style="--i:6">t</span>
+        <span style="--i:7">&nbsp;</span>
+        <span style="--i:8">E</span>
+        <span style="--i:9">r</span>
+        <span style="--i:10">d</span>
+        <span style="--i:11">e</span>
+        <span style="--i:12">m</span>
+        <span style="--i:13">&nbsp;</span>
+        <span style="--i:14">D</span>
+        <span style="--i:15">U</span>
+        <span style="--i:16">M</span>
+        <span style="--i:17">A</span>
+        <span style="--i:18">N</span>
+    </div>
+</div>
+
+</body>
+</html>
